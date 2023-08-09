@@ -183,8 +183,9 @@ message Path {
   bytes element = 2;
 }
 
-// StarkNet uses a binary tree, so for each intermediate node, only one child is needed as proof. So might as well
-// address the child directly and save bandwidth. Make implementation easier too.
+// StarkNet uses a binary tree, so for each intermediate node, only one child is needed as proof.
+// So might as well address the child directly. Make implementation easier.
+// There is a "proof of existence" requirement, which I'm not sure about. Might need to double check this.
 message ProofNode {
   Path key = 1;
   FieldElement hash = 2;
